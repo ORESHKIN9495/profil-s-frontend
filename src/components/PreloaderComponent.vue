@@ -1,0 +1,42 @@
+<script setup lang="ts">
+// do smth
+</script>
+
+<template>
+  <section>
+    <svg width="49" height="52" viewBox="0 0 49 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M26.8178 -2.75922e-06C32.306 -0.00801497 37.6554 1.71865 42.097 4.93176L34.3704 21.7624C32.1296 20.6392 29.5561 19.9996 26.8187 19.9996C18.1422 19.9996 11.1078 26.4173 11.1078 34.3326C11.1078 42.2487 18.1422 48.6664 26.8187 48.6664C33.4296 48.6664 39.0857 44.9406 41.4057 39.6669H49.0022C44.407 47.0682 36.1909 52 26.8187 52C12.4196 52 0.746094 40.3594 0.746094 26.0004C0.746094 11.6406 12.4196 -2.75922e-06 26.8187 -2.75922e-06H26.8178Z"
+        fill="#ffffff"
+      />
+    </svg>
+  </section>
+</template>
+
+<style scoped lang="scss">
+section {
+  animation: opacity 0.5s ease-in-out 1.5s forwards;
+  background-color: rgb(var(--color-theme));
+  display: grid;
+  inset: 0;
+  place-items: center;
+  position: fixed;
+  z-index: 999;
+
+  svg {
+    animation: logotype 1s ease-in-out infinite;
+  }
+
+  @keyframes logotype {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes opacity {
+    100% {
+      opacity: 0;
+    }
+  }
+}
+</style>
