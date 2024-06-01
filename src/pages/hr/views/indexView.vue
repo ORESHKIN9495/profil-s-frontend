@@ -5,13 +5,12 @@ import FilterComponent from "../conponents/FilterComponent.vue";
 import HrComponent from "../conponents/HrComponent.vue";
 import ModalComponent from "../conponents/ModalComponent.vue";
 import { hr } from "../stores";
-const route = useRoute();
 
+const route = useRoute();
 const store = hr();
 
 watchEffect(() => {
   window.addEventListener("resize", () => (window.innerWidth < 920 ? (store.resolution = true) : (store.resolution = false)));
-
   window.innerWidth < 920 ? (store.resolution = true) : (store.resolution = false);
 });
 </script>
