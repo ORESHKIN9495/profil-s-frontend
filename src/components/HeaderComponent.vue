@@ -62,16 +62,6 @@ header {
     background-color: rgb(var(--color-light));
     color: rgb(var(--color-dark));
   }
-
-  svg {
-    cursor: pointer;
-
-    margin: 0 0 6px auto;
-
-    &:hover {
-      opacity: 0.6;
-    }
-  }
 }
 
 @media only screen and (max-width: 920px) {

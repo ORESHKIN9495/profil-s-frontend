@@ -5,20 +5,59 @@ const store = root();
 </script>
 
 <template>
-  <svg v-if="store.stateMenu" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" v-on:click="store.stateMenu = false">
-    <rect y="18.3848" width="26" height="2" transform="rotate(-45 0 18.3848)" fill="currentColor" />
-    <rect x="1.41406" width="26" height="2" transform="rotate(45 1.41406 0)" fill="currentColor" />
-  </svg>
-
-  <svg v-else width="30" height="20" viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg" v-on:click="store.stateMenu = true">
-    <rect width="30" height="1.8" fill="currentColor" />
-    <rect y="8" width="30" height="1.8" fill="currentColor" />
-    <rect y="16" width="30" height="1.8" fill="currentColor" />
+  <svg width="30" height="20" viewBox="0 0 30 20" fill="none" :class="{ active: store.stateMenu }" v-on:click="store.stateMenu = !store.stateMenu">
+    <rect class="top_line" width="30" height="2" fill="currentColor" />
+    <rect class="middle_line" y="9" width="30" height="2" fill="currentColor" />
+    <rect class="bottom_line" y="18" width="30" height="2" fill="currentColor" />
   </svg>
 </template>
 
 <style scoped lang="scss">
 svg {
-  margin: auto 0 2px auto;
+  cursor: pointer;
+  margin: 0 0 6px auto;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  rect {
+    transition: 0.5s ease-in-out;
+    transform-origin: center;
+  }
+
+  &.active {
+    color: rgb(var(--color-theme));
+
+    rect {
+      scale: 0.9;
+
+      y: 9px;
+
+      &.top_line {
+        animation: cross_top_line 0.3s ease-in-out 0.5s 1 forwards;
+
+        @keyframes cross_top_line {
+          100% {
+            transform: rotate(45deg);
+          }
+        }
+      }
+
+      &.middle_line {
+        opacity: 0;
+      }
+
+      &.bottom_line {
+        animation: cross_bottom_line 0.3s ease-in-out 0.5s 1 forwards;
+
+        @keyframes cross_bottom_line {
+          100% {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
 }
 </style>
