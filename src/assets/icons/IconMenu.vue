@@ -22,7 +22,6 @@ svg {
   }
 
   rect {
-    transition: 0.5s ease-in-out;
     transform-origin: center;
   }
 
@@ -31,17 +30,10 @@ svg {
 
     rect {
       scale: 0.9;
-
       y: 9px;
 
       &.top_line {
-        animation: cross_top_line 0.3s ease-in-out 0.5s 1 forwards;
-
-        @keyframes cross_top_line {
-          100% {
-            transform: rotate(45deg);
-          }
-        }
+        transform: rotate(45deg);
       }
 
       &.middle_line {
@@ -49,13 +41,7 @@ svg {
       }
 
       &.bottom_line {
-        animation: cross_bottom_line 0.3s ease-in-out 0.5s 1 forwards;
-
-        @keyframes cross_bottom_line {
-          100% {
-            transform: rotate(-45deg);
-          }
-        }
+        transform: rotate(-45deg);
       }
     }
   }
